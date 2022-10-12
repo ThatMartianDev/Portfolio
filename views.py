@@ -54,8 +54,8 @@ def contact():
             copy_of_mail = "no"
 
 
-        MY_EMAIL_ADDRESS = 'thatmartiandev@gmail.com'
-        EMAIL_PASSWORD = 'zlqnlrozendhnghw'
+        MY_EMAIL_ADDRESS = 'myEmail'
+        EMAIL_PASSWORD = 'myPassword'
 
         def send_mail():
             client_info = f'name: {client_name}\nbussiness name: {bname}\n industry: {bindustry}\nreaching out method : {contact_way}\n Client Email : {client_email}'
