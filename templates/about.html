@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+
+{% block docStyles %}
+
+<link rel="stylesheet" href="{{ url_for ('static', filename='about-style.css') }}">
+<link rel="stylesheet" href="{{ url_for ('static', filename='mutual-styles.css') }}">
+
+{% endblock %}
+
+{% block main %}
+
+
+<div id="loading-page">
+    <div class="loading-container">
+        <p>Getting things ready . . .</p>
+        <div id="hala"><span>Ya</span><span class="gradiant-font">Hala!</span></div>
+    </div>
+</div>
+    <main id="main-container">
+        <section id="home">
+            <!-- <div id='stars' class="stars-group"></div> -->
+            <!-- <div id='stars2' class="stars-group"></div> -->
+            <div id='stars3' class="stars-group"></div>
+            <div class="container">
+                <div class="col1 fader">
+                    <div class="chars-group">
+                        <h1 class="chars-first fader">Shaping <span class="gradiant-font">your</span></h1>
+                    </div>
+                    <div class="chars-group">
+                        <h1 class="chars-second fader"><span>Digital</span> <span>Journey</span></h1>
+                    </div>
+                    <div class="svg1 fader">
+                        <svg width="100%" height="100%" viewBox="0 0 1519 539" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 317.102L121.763 490.585C131.907 507.546 156.237 508.219 167.304 491.845L259.96 354.759C271.433 337.785 296.889 339.272 306.308 357.467L372.767 485.854C382.278 504.226 408.069 505.516 419.365 488.184L508.878 350.844C519.365 334.753 542.827 334.449 553.728 350.263L654.527 496.496C664.919 511.571 686.984 512.151 698.153 497.642L814.528 346.46C825.697 331.951 847.763 332.53 858.154 347.606L959.407 494.496C970.186 510.134 993.314 510.049 1003.98 494.333L1102.5 349.147C1113.05 333.602 1135.85 333.314 1146.79 348.588L1274.56 527" stroke="url(#paint0_linear_621_692)" stroke-width="40"/>
+                            <path d="M245.441 11L349.204 184.483C359.349 201.444 383.679 202.117 394.746 185.744L487.402 48.6575C498.874 31.6834 524.331 33.1704 533.749 51.3649L600.209 179.752C609.719 198.124 635.511 199.414 646.807 182.083L736.319 44.7423C746.807 28.6509 770.268 28.347 781.169 44.1614L881.969 190.394C892.36 205.47 914.426 206.049 925.594 191.54L1041.97 40.3581C1053.14 25.849 1075.2 26.4286 1085.6 41.504L1186.85 188.394C1197.63 204.032 1220.76 203.948 1231.42 188.232L1329.94 43.0456C1340.49 27.5 1363.3 27.2118 1374.23 42.486L1502 220.898" stroke="#A76E00" stroke-width="40"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_621_692" x1="646.279" y1="317.102" x2="646.279" y2="527" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#8D5E00"/>
+                            <stop offset="1" stop-color="#9F4009"/>
+                            </linearGradient>
+                            </defs>
+                            </svg>
+                    </div>
+                </div>
+                <p class="welcome fader"><span class="slide-out-text fader">Welcome to my space!</span><br><span class="slide-out-text fader">scroll down to get to know me</span></p>
+            </div>
+        </section>
+        <section id="about-me" class="observer1 sticky-observers">
+            <div class="shape-divider-top">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <!-- <div class="quote flex fader">
+                <svg class="arrow-svg fader" width="150" height="300" viewBox="0 0 311 1064" fill="none" xmlns="http://www.w3.org/2000/svg" data-before="I believe that">
+                    <path d="M219.958 7C321.719 184.202 319.701 411.822 275.63 613.997C235.221 799.373 130.485 930.163 12.3828 1054" stroke="white" stroke-width="13" stroke-linecap="round"/>
+                    <path d="M11.3823 1055C5.61481 1053.43 7.38232 1044.03 7.38232 1039.83C7.38232 1027.78 6.5221 1016.1 7.38232 1004.06C9.02195 981.101 10.3823 958.051 10.3823 935" stroke="white" stroke-width="13" stroke-linecap="round"/>
+                    <path d="M11.3828 1056C34.4957 1056 58.157 1059.28 80.1606 1050C90.8121 1045.51 101.741 1042.19 112.716 1038.56C133.099 1031.8 153.023 1023.79 173.383 1017" stroke="white" stroke-width="13" stroke-linecap="round"/>
+                </svg>
+                <span class="gradiant-font q-sign">"</span>
+                <p><span class="slide-out-text fader">Boldness, Simplicity, and flexiblty</span><br><span class="slide-out-text fader">are the ingredients for a creative</span><br><span class="slide-out-text fader">website experince.</span></p>
+            </div> -->
+            <div class="about-container flex">
+                <div class="bio fader">
+                    <h2 class="section-title fader"><span>Who</span> <span class="gradiant-font">Am I?</span></h2>
+                    <p class="slide-out-text fader">Well, I've been asking myself this question a lot lately, and I'm glad that technology and design helped me discover who I am. My name is Ahmed, also known as MarsMan. I'm a Cairo-based web developer and designer eager to collaborate with passionate people and brands who want to empower others and make a difference in their lives. My mission is to help you shape your digital journey by creating websites that are pleasing to the eye, perform well, meet user expectations, and deliver the intended message.</p>
+                </div>
+                <div class="myimg fader"><img src="/static/images/myimg.png"></div>
+            </div>
+        </section>
+        <section id="passion">
+            <div class="passion-intro flex">
+                <h3 class="section-title"><span class="slide-out-text fader">I'm </span><span class="slide-out-text fader">Passion-driven</span></h3>
+                <p class="slide-out-text fader">Being passion-driven by technology, design, and the cosmos transformed my life and made it full of joy, meaning, and commitment. See how and why . . .</p>
+                <svg class="arrow-svg fader" width="150" height="250" viewBox="0 0 650 1007" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M643.283 9.41942C384.298 -13.6712 217.514 141.275 122.214 337.702C34.8333 517.807 68.4496 750.895 123.942 997.926" stroke="white" stroke-width="13" stroke-linecap="round"/>
+                    <path d="M123.198 998.594C128.766 1002.44 134.404 994.66 137.529 991.852C146.494 983.796 155.839 976.718 164.141 967.938C179.965 951.204 196.072 934.643 213.218 919.236" stroke="white" stroke-width="13" stroke-linecap="round"/>
+                    <path d="M123.029 998.109C103.389 986.828 81.4355 978.733 67.9696 958.223C61.4511 948.295 54.0348 939.468 46.7586 930.284C33.2456 913.227 20.8356 895.061 7.36152 877.978" stroke="white" stroke-width="13" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="passion-container flex">
+                <div class="passion-item flex">
+                    <header class="passion-details flex">
+                        <h3 class="passion-title">
+                            <span class="slide-out-text fader">01</span>
+                            <span class="slide-out-text fader">Technology</span>
+                        </h3>
+                        <p class="slide-out-text fader">My passion for technology goes back to when I was 12 years old, mimicking websites I visit using blogger. Since then, my thirst for more knowledge about technology increases as the world evolves. It always amazes me how technology solves our problems, From problems we face in our daily lives to big ones, and even achieving the unknown.</p>
+                    </header>
+                    <div class="passion-img fader">
+                        <img src="/static/images/tech.svg" alt="">
+                    </div>
+                </div>
+                <div class="passion-item flex">
+                    <header class="passion-details flex">
+                        <h3 class="passion-title">
+                            <span class="slide-out-text fader">02</span>
+                            <span class="slide-out-text fader">Design</span>
+                        </h3>
+                        <p class="slide-out-text fader">Designing has been and will always be that part of me that disconnects me from this world. It allows me to fly wildly in the space of creativity and explore every possible angle of it, to create something attractive, bold, and impactful to the lives of others.</p>
+                    </header>
+                    <div class="passion-img fader">
+                        <img src="/static/images/design.svg" alt="">
+                    </div>
+                </div>
+                <div class="passion-item flex">
+                    <header class="passion-details flex">
+                        <h3 class="passion-title">
+                            <span class="slide-out-text fader">03</span>
+                            <span class="slide-out-text fader">Cosmos</span>
+                        </h3>
+                        <p class="slide-out-text fader">Looking up at the sky at night, curiosity hits me to know more about this magnificent universe. Growing up watching human achievements and discoveries in the universe inspired me that the impossible can be possible and to push my limits to achieve my goals. My addiction to learning about planet Mars inspired me to the nickname MarsMan.</p>
+                    </header>
+                    <div class="passion-img fader">
+                        <img src="/static/images/cosmos.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="student flex">
+                <header class="student-title">
+                    <h3><span class="slide-out-text fader">A forever</span>
+                        <span class="slide-out-text fader">student</span>
+                    </h3>
+                </header>
+                <p class="slide-out-text fader">Learning is a journey I enjoy. Pursuing knowledge, gaining new experiences, growing and acquiring skills, and exploring different perspectives make me happier, be more efficient, and boost my confidence in my capabilities to take on new challenges and solve further problems.</p>
+            </div>
+        </section>
+        <section id="why-choose-me" class="observer2 sticky-observers">
+            <div class="reasons-container flex">
+                <div class="choose-intro flex">
+                    <h5 class="section-title"><span class="slide-out-text fader">Why choose</span> <span class="slide-out-text fader">Me?</span></h5>
+                    <p class="slide-out-text fader">because what i do is a result of . . .</p>
+                </div>
+                <div class="reason-items flex">
+                    <div class="reason-item flex fader">
+                        <span class="reason-title fader"> The two P's</span>
+                        <p class="slide-out-text fader">My Passion for design and Technology, And the Purpose of contributing to the world by making sure that what I do leaves a positive impact on others.</p>
+                    </div>
+                    <div class="reason-item flex fader">
+                        <span class="reason-title fader">Strategy</span>
+                        <p class="slide-out-text fader">Defining a plan to find a solution to your problem, Starting from what you want to achieve to studying your target audience and competitors.</p>
+                    </div>
+                    <div class="reason-item flex fader">
+                        <span class="reason-title fader"> Creativity</span>
+                        <p class="slide-out-text fader">Creating websites that are new in concept, unique in design, and only leave the "Wow" response from your target audience.</p>
+                    </div>
+                </div>
+                <div class="mark gradiant-font">?</div>
+            </div>
+        </section>
+        <section id="contact" class="section-slide">
+        <div class="contact-container flex fader">
+            <div class="side1 flex">
+                <div class="talk-slider fader" id="slider-container">
+                    <span class="first">Let's </span>
+                    <span id="lets-talk-slider">
+                            <span class="gradiant-font">be unique</span>
+                            <span class="gradiant-font">be creative</span>
+                            <span class="gradiant-font">thrive</span>
+                            <span class="gradiant-font">work together</span>
+                            <span class="gradiant-font">be unique</span>
+                            <span class="gradiant-font">be creative</span>
+                            <span class="gradiant-font">thrive</span>
+                            <span class="gradiant-font">work together</span>
+                            <span class="gradiant-font">be unique</span>
+                            <span class="gradiant-font">be creative</span>
+                            <span class="gradiant-font">thrive</span>
+                            <span class="gradiant-font">work together</span>
+                    </span>
+                </div>
+            </div>
+            <div class="side2 flex">
+                <div class="reach-methds flex">
+                    <a href="mailto:thatmartiandev@gmail.com"><span class="gradiant-font">E : </span>ThatMartianDev@gmail.com</a>
+                    <a href="tel:+201026705679"><span class="gradiant-font">T : </span>+20 102 670 5679</a>
+                    <span><span class="gradiant-font">L : </span>Cairo - Egypt</span>
+                </div>
+                <a href="/contact" target="_blank" class="contact-btn magnetic noSelect" id="contact-btn">
+                    <span>Reach Out!</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer flex">
+            <p><span>MARSMAN</span> 2022 - Icons in site from <a href="https://icons8.com">Icons8</a></p>
+            <div class="footer-socials">
+                <a href="https://twitter.com/ThatMartianDev" target="_blank" class="footer-social">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30" width="30px" height="30px">
+                        <g id="surface69330637">
+                        <path style=" stroke:none;fill-rule:nonzero;fill:rgb(92.54902%,94.117647%,94.509804%);fill-opacity:1;" d="M 28 6.9375 C 27.042969 7.363281 26.015625 7.648438 24.9375 7.777344 C 26.039062 7.117188 26.882812 6.070312 27.28125 4.824219 C 26.25 5.4375 25.109375 5.882812 23.894531 6.121094 C 22.921875 5.085938 21.535156 4.4375 20 4.4375 C 17.054688 4.4375 14.664062 6.824219 14.664062 9.769531 C 14.664062 10.1875 14.714844 10.597656 14.804688 10.984375 C 10.371094 10.761719 6.441406 8.640625 3.808594 5.410156 C 3.351562 6.199219 3.089844 7.113281 3.089844 8.09375 C 3.089844 9.945312 4.027344 11.578125 5.460938 12.53125 C 4.585938 12.503906 3.761719 12.265625 3.042969 11.867188 C 3.042969 11.890625 3.042969 11.910156 3.042969 11.933594 C 3.042969 14.519531 4.882812 16.675781 7.324219 17.164062 C 6.875 17.285156 6.402344 17.351562 5.917969 17.351562 C 5.574219 17.351562 5.238281 17.316406 4.914062 17.253906 C 5.59375 19.375 7.5625 20.917969 9.898438 20.960938 C 8.070312 22.390625 5.773438 23.242188 3.273438 23.242188 C 2.84375 23.242188 2.417969 23.21875 2 23.167969 C 4.359375 24.683594 7.164062 25.566406 10.175781 25.566406 C 19.988281 25.566406 25.351562 17.4375 25.351562 10.386719 C 25.351562 10.15625 25.347656 9.925781 25.335938 9.699219 C 26.378906 8.945312 27.285156 8.007812 28 6.9375 Z M 28 6.9375 "/>
+                        </g>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ThatMartianDev" target="_blank" class="footer-social">in</a>
+                <a href="https://github.com/ThatMartianDev" target="_blank" class="footer-social">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30" width="30px" height="30px">
+                        <g id="surface69433073">
+                        <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 15 3 C 8.371094 3 3 8.371094 3 15 C 3 20.621094 6.871094 25.328125 12.09375 26.628906 C 12.035156 26.46875 12 26.28125 12 26.046875 L 12 23.996094 C 11.511719 23.996094 10.695312 23.996094 10.492188 23.996094 C 9.671875 23.996094 8.941406 23.644531 8.585938 22.988281 C 8.195312 22.257812 8.125 21.144531 7.152344 20.460938 C 6.863281 20.234375 7.082031 19.976562 7.414062 20.011719 C 8.03125 20.183594 8.539062 20.605469 9.019531 21.230469 C 9.5 21.859375 9.722656 22 10.617188 22 C 11.050781 22 11.699219 21.976562 12.308594 21.878906 C 12.636719 21.046875 13.203125 20.28125 13.894531 19.917969 C 9.898438 19.507812 7.992188 17.519531 7.992188 14.820312 C 7.992188 13.65625 8.488281 12.535156 9.328125 11.585938 C 9.054688 10.648438 8.707031 8.730469 9.433594 8 C 11.234375 8 12.320312 9.164062 12.582031 9.480469 C 13.476562 9.175781 14.460938 9 15.496094 9 C 16.53125 9 17.519531 9.175781 18.417969 9.484375 C 18.675781 9.171875 19.761719 8 21.566406 8 C 22.296875 8.730469 21.945312 10.65625 21.667969 11.59375 C 22.503906 12.539062 22.996094 13.660156 22.996094 14.820312 C 22.996094 17.515625 21.089844 19.503906 17.101562 19.917969 C 18.199219 20.488281 19 22.101562 19 23.3125 L 19 26.046875 C 19 26.152344 18.976562 26.226562 18.964844 26.316406 C 23.640625 24.675781 27 20.234375 27 15 C 27 8.371094 21.628906 3 15 3 Z M 15 3 "/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+        <div id="contact-bg">
+            <div id='stars' class="stars-group"></div>
+            <div id='stars2' class="stars-group"></div>
+            <div id='stars3' class="stars-group"></div>
+            <div class="planet">
+                <img src="/static/images/planet.svg">
+            </div>
+        </div>
+    </main>
+
+<!-- <script src="{{ url_for('static', filename='jQuery.js') }}"></script>
+<script src="{{ url_for ('static', filename='about.js') }}"></script>
+<script src="{{ url_for ('static', filename='mutual-js.js') }}"></script> -->
+
+{% endblock %}
+
+{% block docJs %}
+
+<script src="{{ url_for ('static', filename='about.js') }}"></script>
+
+{% endblock %}
