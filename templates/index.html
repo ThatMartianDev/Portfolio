@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
+{% block metatags %}
+
+
+<meta name="description" content="A web developer and designer ready to shape your digital journey by building creative and impactful website experiences for passionate brands and individuals.">
+<meta property="og:url" content="https://marsman.pythonanywhere.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MARSMAN Web Developer & Designer based in Cairo, Egypt.">
+<meta property="og:description" content="A web developer and designer ready to shape your digital journey by building creative and impactful website experiences for passionate brands and individuals.">
+<meta property="og:image" content="https://marsman.pythonanywhere.com/static/images/socialsimg.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="marsman.pythonanywhere.com">
+<meta property="twitter:url" content="https://marsman.pythonanywhere.com">
+<meta name="twitter:title" content="MARSMAN Web Developer & Designer based in Cairo, Egypt.">
+<meta name="twitter:description" content="A web developer and designer ready to shape your digital journey by building creative and impactful website experiences for passionate brands and individuals.">
+<meta name="twitter:image" content="https://marsman.pythonanywhere.com/static/images/socialsimg.png">
+
+
+{% endblock %}
+
 {% block docStyles %}
 
 <link rel="stylesheet" type="text/css" href="/static/style.css">
@@ -251,7 +270,6 @@
         </div>
     </section>
 </main>
-
 {% endblock %}
 
 {% block docJs %}

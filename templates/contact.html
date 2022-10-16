@@ -1,5 +1,22 @@
 {% extends 'base.html' %}
 
+{% block metatags %}
+
+<meta name="description" content="Contact MARSMAN to help you on your digital Journey. Email: ThatMartianDev@gmail.com, LiveChat: +201026705679, Fill Out A Form.">
+<meta property="og:url" content="https://marsman.pythonanywhere.com/contact">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact | MARSMAN Web Developer & Designer based in Cairo, Egypt.">
+<meta property="og:description" content="Contact MARSMAN to help you on your digital Journey. Email: ThatMartianDev@gmail.com, LiveChat: +201026705679, Fill Out A Form.">
+<meta property="og:image" content="https://marsman.pythonanywhere.com/static/images/contact.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="marsman.pythonanywhere.com">
+<meta property="twitter:url" content="https://marsman.pythonanywhere.com/contact">
+<meta name="twitter:title" content="Contact | MARSMAN Web Developer & Designer based in Cairo, Egypt.">
+<meta name="twitter:description" content="Contact MARSMAN to help you on your digital Journey. Email: ThatMartianDev@gmail.com, LiveChat: +201026705679, Fill Out A Form.">
+<meta name="twitter:image" content="https://marsman.pythonanywhere.com/static/images/contact.png">
+
+{% endblock %}
+
 {% block docStyles %}
 
 <link rel="stylesheet" href="{{ url_for ('static', filename='contact.css') }}">
@@ -19,7 +36,7 @@
 <div id='stars2' class="stars-group"></div>
 <div id='stars3' class="stars-group"></div>
 <div class="planet">
-        <img src="/static/images/planet.svg">
+    <img src="/static/images/planet.svg">
 </div>
 <main class="main">
         <div class="container flex" id="form-window">

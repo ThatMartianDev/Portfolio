@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 
+{% block metatags %}
+
+<meta name="description" content="The Web Development solution's from MARSMAN will help you build a flexible Front End and a scalable Back End for your website. ">
+<meta property="og:url" content="https://marsman.pythonanywhere.com/web-development">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Web Development | MARSMAN Web Developer & Designer based in Cairo, Egypt.">
+<meta property="og:description" content="The Web Development solution's from MARSMAN will help you build a flexible Front End and a scalable Back End for your website. ">
+<meta property="og:image" content="https://marsman.pythonanywhere.com/static/images/web-dev-img.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="marsman.pythonanywhere.com">
+<meta property="twitter:url" content="https://marsman.pythonanywhere.com/web-development">
+<meta name="twitter:title" content="Web Development | MARSMAN Web Developer & Designer based in Cairo, Egypt.">
+<meta name="twitter:description" content="The Web Development solution's from MARSMAN will help you build a flexible Front End and a scalable Back End for your website. ">
+<meta name="twitter:image" content="https://marsman.pythonanywhere.com/static/images/web-dev-img.png">
+
+{% endblock %}
+
+
 {% block docStyles %}
 
 <link rel="stylesheet" href="/static/web-development.css">
@@ -306,7 +324,7 @@
                     <div class="sol-content flex">
                         <span class="sol-title slide-out-text fader gradiant-font">Full-stack</span>
                         <p class=" sol-description slide-out-text fader">Simple yet performing full-website development service, from the front-end to the back-end.</p>
-                        <a href="#" class="sol-cta magnetic"><span>Request a quote</span></a>
+                        <a href="/contact" class="sol-cta magnetic"><span>Request a quote</span></a>
                     </div>
                     <div class="sol-img">
                         <img src="/static//images/fullstack.svg">
@@ -316,7 +334,7 @@
                     <div class="sol-content flex">
                         <span class="sol-title slide-out-text fader gradiant-font">Front-end</span>
                         <p class=" sol-description slide-out-text fader">Building a front-end that works and looks flexibly on any device and browser.</p>
-                        <a href="#" class="sol-cta magnetic"><span>Request a quote</span></a>
+                        <a href="/contact" class="sol-cta magnetic"><span>Request a quote</span></a>
                     </div>
                     <div class="sol-img">
                         <img src="/static/images/frontend.svg">
@@ -326,7 +344,7 @@
                     <div class="sol-content flex">
                         <span class="sol-title slide-out-text fader gradiant-font">Back-end</span>
                         <p class=" sol-description slide-out-text fader">Building a Scaleable, safe, and fast back-end using the python language and the awesome Flask microframework.</p>
-                        <a href="#" class="sol-cta magnetic"><span>Request a quote</span></a>
+                        <a href="/contact" class="sol-cta magnetic"><span>Request a quote</span></a>
                     </div>
                     <div class="sol-img">
                         <img src="/static/images/backend.svg">
@@ -336,7 +354,7 @@
                     <div class="sol-content flex">
                         <span class="gradiant-font sol-title slide-out-text fader">Maintenance</span>
                         <p class="sol-description slide-out-text fader">Keep the visitor and Google happy by monitoring your website's health and performance.</p>
-                        <a href="#" class="sol-cta magnetic"><span>Request a quote</span></a>
+                        <a href="/contact" class="sol-cta magnetic"><span>Request a quote</span></a>
                     </div>
                     <div class="sol-img">
                         <img src="/static/images/maintenance.svg" >
@@ -348,7 +366,7 @@
             <div class="reach-container flex">
                 <h5 class="section-title fader">Watcha <span class="gradiant-font">Waiting for?!</span></h5>
                 <p class="slide-out-text fader">Don't hesitate anymore! Reach out and share what's on your mind, whether it's a question, a bug to fix, or a project to build.</p>
-                <a href="#" class="reach-btn magnetic fader"><span>Let's work together!</span></a>
+                <a href="/contact" class="reach-btn magnetic fader"><span>Let's work together!</span></a>
             </div>
         </section>
         <section id="faqs">
