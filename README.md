@@ -19,7 +19,11 @@ In the templates, you will find my website pages, a base template, and my form e
 - Favcon: is my website favcon files.
 - Poppins: is the file for the main font I'm using for the website.
 
+I'll Include more description soon!
 
 Check out the website live!
 
 https://marsman.pythonanywhere.com
+
+
+All Rights Reserved.
