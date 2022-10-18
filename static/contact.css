@@ -728,7 +728,7 @@ input, textarea {
     .form-tab input,
     .form-tab textarea {
         padding: 0.3rem 0.2rem;
-    } 
+    }
 
     .prev-next {
         right: 0;
@@ -824,7 +824,7 @@ body.portrait-mode #form-window label {
 body.portrait-mode #form-window input,
 body.portrait-mode #form-window textarea {
     padding: 0.8rem .8rem;
-} 
+}
 
 body.portrait-mode #form-close {
     top: 2%;
@@ -920,7 +920,7 @@ body.portrait-mode .prev-next {
       font-size: 130%;
     }
 }
-  
+
 @media screen and (min-width: 1200px) {
     html {
       font-size: 140%;

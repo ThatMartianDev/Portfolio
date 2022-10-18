@@ -66,6 +66,10 @@ p {
     max-width: 60ch;
 }
 
+ul {
+    list-style: none;
+}
+
 .flex {
     display: -webkit-flex;
     display: flex;
@@ -196,7 +200,7 @@ body #header {
     opacity: 1;
 }
 
-.intro-container h1 {
+.group1, .group2 {
     font-size: clamp(2rem, 5vw, 7rem);
     color: white;
     font-weight: 300;
@@ -386,6 +390,7 @@ body #header {
     display: block;
     color: white;
     font-size: var(--p-bigger);
+    font-family: 'Orbitron', sans-serif;
     text-transform: capitalize;
     font-weight: 300;
     -o-transform: translateY(-20px);
@@ -879,7 +884,7 @@ body #header {
     background: linear-gradient(to top left, #080319, #09031b, #0a031e, #0b0420, #0c0423, #150524, #1c0624, #230623, #2e071d, #360a16, #3a100e, #3b1904);
 }
 
-.service-item h3 {
+.service-item h5 {
     font-size: var(--p-bigger);
     font-weight: 400;
 }
@@ -986,6 +991,11 @@ body #header {
     -moz-transform: translate(0%, 0%);
     -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%);
+}
+
+#contact .talk-slider h6 {
+    font-size: clamp(2rem, 5vw, 5rem);
+    font-weight: 200;
 }
 
 .side2 {

@@ -5,6 +5,8 @@ from flask import (
     request,
     render_template
 )
+from urllib.parse import urlparse, urlunparse
+
 import smtplib
 from email.message import EmailMessage
 from flask_wtf.csrf import CSRFProtect
@@ -150,6 +152,14 @@ def web_development():
 @app.route("/sitemap.xml")
 def sitemap():
         return render_template("sitemap.xml")
+
+@app.before_request
+def redirect_to_domain():
+    urlparts = urlparse(request.url)
+    if urlparts.netloc == FROM_DOMAIN:
+        urlparts_list = list(urlparts)
+        urlparts_list[1] = TO_DOMAIN
+        return redirect(urlunparse(urlparts_list), code=301)
 
 
 if __name__ == '__main__':

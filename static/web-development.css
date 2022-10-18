@@ -6,6 +6,10 @@ body {
     background: var(--prime-color);
 }
 
+ul {
+    list-style: none;
+}
+
 section:not(#home, #contact){
     z-index: 10;
 }
@@ -250,7 +254,7 @@ section:not(#home, #contact){
 
 .sol-item:nth-of-type(2) .sol-content,
 .sol-item:nth-of-type(4) .sol-content {
-    margin: 2rem 0 2rem 1.5rem;
+    margin: auto 0 auto 3.5ch;
 }
 
 
@@ -275,8 +279,8 @@ section:not(#home, #contact){
     font-size: clamp(1rem, 4vw, 1.4rem);
     font-weight: 400;
     line-height: 1.6;
-    opacity: 0.8;
-    margin: 3ch 0;
+    opacity: 0.7;
+    margin: 2ch 0;
 }
 
 .sol-cta {
@@ -387,8 +391,7 @@ section:not(#home, #contact){
 .reach-container p {
     max-width: 50ch;
     text-align: center;
-    font-weight: 400;
-    opacity: 0.7;
+    font-weight: 300;
     font-size: var(--p-bigger);
     margin: 3rem 0;
 }
@@ -396,7 +399,6 @@ section:not(#home, #contact){
 #reach-out .reach-btn {
     color: white;
     font-size: var(--p-medium);
-    font-weight: 400;
     border: 1px solid var(--btn-border-clr);
     padding: 1rem 5vw;
     border-radius: 3rem;
@@ -413,10 +415,8 @@ section:not(#home, #contact){
 }
 
 #reach-out .reach-btn.fade-in {
-    opacity: 0.9;
+    opacity: 1;
 }
-
-
 
 /* FAQs */
 
@@ -430,16 +430,16 @@ section:not(#home, #contact){
     border-radius: 0 0 3rem 3rem;
 }
 
+#faqs .section-title {
+    margin: 0 auto clamp(5rem, 10vh, 10rem) auto;
+}
+
 .faqs-container {
     width: 80%;
     height: max-content;
     max-width: 1600px;
     flex-direction: column;
     margin: auto;
-}
-
-#faqs .section-title {
-    margin: 0 auto clamp(5rem, 10vw, 10rem) auto;
 }
 
 .q-item {
@@ -501,7 +501,7 @@ section:not(#home, #contact){
     padding: 1rem 2rem;
 }
 
-.question span {
+.question h4 {
     font-size: var(--p-medium);
     font-weight: 300;
     color: white;
@@ -588,7 +588,6 @@ section:not(#home, #contact){
 
 #contact-bg .container {
     align-items: flex-start;
-    gap: 3rem;
 }
 .stars-group {
     position: absolute;
@@ -680,6 +679,9 @@ section:not(#home, #contact){
 .reach-methds span {
     color: white;
     font-size: var(--p-medium);
+}
+
+.reach-methds li {
     margin-top: 0.3rem;
 }
 
@@ -712,7 +714,7 @@ a.contact-btn:visited {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.8rem 3rem;
+    padding: 1rem 7vw;
     border: 1px solid var(--btn-border-clr);
     border-radius: 3rem;
     background: transparent;
@@ -782,8 +784,8 @@ body.portrait-mode .sol-item:not(:last-of-type){
 
 }
 
-.sol-item:nth-of-type(2) .sol-content,
-.sol-item:nth-of-type(4) .sol-content,
+body.portrait-mode .sol-item:nth-of-type(2) .sol-content,
+body.portrait-mode .sol-item:nth-of-type(4) .sol-content,
 body.portrait-mode .sol-content {
     width: clamp(250px, 90%, 600px);
     align-items: center;

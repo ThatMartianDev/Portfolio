@@ -1,3 +1,20 @@
+$(document).ready(function(){
+    /// Check Device Height And Width To Decide Which Style Mode to Apply
+    function checkDeviceWindow(){
+        var winWidth = window.innerWidth;
+        var winHeight = window.innerHeight;
+        if (winHeight > winWidth){
+            $(document.body).addClass("portrait-mode")
+        } else if (winWidth > winHeight) {
+            $(document.body).removeClass("portrait-mode")
+        }
+    }
+    checkDeviceWindow();
+    window.addEventListener("resize", ()=>{
+        checkDeviceWindow();
+    })
+})
+
 function loadingFinsihed() {
     return new Promise(resolve => {
         if ($(document).ready()){
@@ -16,7 +33,7 @@ function loadingFinsihed() {
                 setTimeout(() => {
                     resolve('loading done');
                 }, 300);
-            } 
+            }
         }
     });
 }
@@ -25,8 +42,153 @@ async function asyncSiteFunctions() {
     const result = await loadingFinsihed();
     if (result == 'loading done'){
         $(document).ready(function() {
+            //// header functions
+            $("#menu-btn").click(function() {
+                $(this).toggleClass("active");
+                $("#menu").toggleClass("active");
+                $(".services-list").slideUp();
+                $(".menu-item > a").removeClass("idle");
+                $("#service-btn").children("svg").removeClass("active");
+            });
+
+            $("#service-btn").click(function(){
+                $(".services-list").slideToggle("slow");
+                $(".menu-item > a").toggleClass("idle");
+                $(this).children("svg").toggleClass("active");
+            })
+
+            $(window).scroll(function(){
+                let scrollPos = $(window).scrollTop();
+                if (scrollPos > 300){
+                    $("#header").addClass("scrolled")
+                } else {
+                    $("#header").removeClass("scrolled")
+                }
+            })
+
+            /// Fix 100vh Window Height Problem For The Faded In Menu
+
+            const setMenuHeight = ()=>{
+                document.querySelector(".menu-container").style.height = window.innerHeight + 'px';
+            }
+
+            setMenuHeight()
+
+            window.addEventListener('resize', () => {
+                setMenuHeight()
+            });
+
+            const paragraphs = document.querySelectorAll(".slide-out-text")
+            paragraphs.forEach(paragraph => {
+
+                // Split the paragraph into words and return them as a Span tag inside a div tag
+                paragraph.innerHTML = paragraph.innerHTML.split(' ').map(function(word){
+                    return '<div><span>'+word+'</span></div>';
+                }).join(' ');
+
+                // Add the transition delay to each span
+                const paragraphDivs = Array.from(paragraph.children)
+                paragraphDivs.forEach((div, index) => {
+                    let userAgent = navigator.userAgent;
+
+                    if (userAgent.match(/firefox|fxios/i)){
+                        div.firstChild.style['-moz-transition-delay'] = index * 10 + "ms";
+                    }  else if (userAgent.match(/safari/i)) {
+                        div.firstChild.style['-webkit-transition-delay'] = index * 10 + "ms";
+                    } else if (userAgent.match(/opr\//i)) {
+                        div.firstChild.style['-o-transition-delay'] = index * 10 + "ms";
+                    } else {
+                        div.firstChild.style['transition-delay'] = index * 10 + "ms";
+                    }
+                    })
+            })
+
+            /// Menu Links Hover Effect Transition Delay
+
+            const menuLinks = document.querySelectorAll(".menu-links")
+            menuLinks.forEach(link => {
+                let userAgent = navigator.userAgent;
+
+                const menuLinksSpans = link.children;
+                if (userAgent.match(/firefox|fxios/i)){
+                    for (let i = 0; i < link.children.length; i++ ){
+                        link.children[i].style['-moz-transition-delay'] = 10 + (i * 30) + 'ms';
+                    }
+                }  else if (userAgent.match(/safari/i)) {
+                    for (let i = 0; i < link.children.length; i++ ){
+                        link.children[i].style['-webkit-transition-delay'] = 10 + (i * 30) + 'ms';
+                    }
+                } else if (userAgent.match(/opr\//i)) {
+                    for (let i = 0; i < link.children.length; i++ ){
+                        link.children[i].style['-o-transition-delay'] = 10 + (i * 30) + 'ms';
+                    }
+                } else {
+                    for (let i = 0; i < link.children.length; i++ ){
+                        link.children[i].style['transition-delay'] = 10 + (i * 30) + 'ms';
+                    }
+                }
+                console.log(menuLinksSpans.length)
+            })
+
+            /// Buttons Sticky / Magnetic Hover effict
+
+            const magneticBtns = Array.from(document.querySelectorAll(".magnetic"));
+            magneticBtns.forEach(button => {
+                button.addEventListener("mousemove", function(e) {
+                    const btnPos = button.getBoundingClientRect();
+                    const btnX = e.clientX - btnPos.left - btnPos.width / 2;
+                    const btnY = e.clientY - btnPos.top - btnPos.height / 2;
+
+                    let userAgent = navigator.userAgent;
+
+                    if (userAgent.match(/firefox|fxios/i)){
+                        this.style['-moz-transform'] = "translate(" + btnX * 0.15 + "px, " + btnY * 0.4 + "px)";
+                        this.style['-moz-transform'] += "rotate3d(" + btnX * -0.1 + ", " + btnY * -0.2 + ", 0, 12deg)";
+                        this.children[0].style['-moz-transform'] = `translate(${btnX * 0.025}px, ${btnY * 0.075}px)`;
+                    }  else if (userAgent.match(/safari/i)) {
+                        this.style['-webkit-transform'] = "translate(" + btnX * 0.15 + "px, " + btnY * 0.4 + "px)";
+                        this.style['-webkit-transform'] += "rotate3d(" + btnX * -0.1 + ", " + btnY * -0.2 + ", 0, 12deg)";
+                        this.children[0].style['-webkit-transform'] = `translate(${btnX * 0.025}px, ${btnY * 0.075}px)`;
+                    } else if (userAgent.match(/opr\//i)) {
+                        this.style['-o-transform'] = "translate(" + btnX * 0.15 + "px, " + btnY * 0.4 + "px)";
+                        this.style['-o-transform'] += "rotate3d(" + btnX * -0.1 + ", " + btnY * -0.2 + ", 0, 12deg)";
+                        this.children[0].style['-o-transform'] = `translate(${btnX * 0.025}px, ${btnY * 0.075}px)`;
+                    } else {
+                        this.style['transform'] = "translate(" + btnX * 0.15 + "px, " + btnY * 0.4 + "px)";
+                        this.style['transform'] += "rotate3d(" + btnX * -0.1 + ", " + btnY * -0.2 + ", 0, 12deg)";
+                        this.children[0].style['transform'] = `translate(${btnX * 0.025}px, ${btnY * 0.075}px)`;
+                    }
+                });
+
+                button.addEventListener('mouseleave', function() {
+                    let userAgent = navigator.userAgent;
+
+                    this.style.transform = 'translate3d(0px, 0px, 0px)';
+                    this.style.transform += 'rotate3d(0, 0, 0, 0deg)';
+                    this.children[0].style.transform = 'translate3d(0px, 0px, 0px)';
+
+                    if (userAgent.match(/firefox|fxios/i)){
+                        this.style['-moz-transform'] = "translate3d(0px, 0px, 0px)";
+                        this.style['-moz-transform'] += 'rotate3d(0, 0, 0, 0deg)';
+                        this.children[0].style['-moz-transform'] = 'translate3d(0px, 0px, 0px)';
+                    }  else if (userAgent.match(/safari/i)) {
+                        this.style['-webkit-transform'] = "translate3d(0px, 0px, 0px)";
+                        this.style['-webkit-transform'] += 'rotate3d(0, 0, 0, 0deg)';
+                        this.children[0].style['-webkit-transform'] = 'translate3d(0px, 0px, 0px)';
+                    } else if (userAgent.match(/opr\//i)) {
+                        this.style['-o-transform'] = "translate3d(0px, 0px, 0px)";
+                        this.style['-o-transform'] += 'rotate3d(0, 0, 0, 0deg)';
+                        this.children[0].style['-o-transform'] = 'translate3d(0px, 0px, 0px)';
+                    } else {
+                        this.style['transform'] = "translate3d(0px, 0px, 0px)";
+                        this.style['transform'] += 'rotate3d(0, 0, 0, 0deg)';
+                        this.children[0].style['transform'] = 'translate3d(0px, 0px, 0px)';
+                    }
+                });
+            })
+
             /// Stary Background
-        
+
             function randomStars(n) {
                 let value = `${Math.floor((Math.random() * 3000) + 2)}px ${Math.floor((Math.random() * 3000) + 2)}px #FFF`;
                 for (let i = 0; i < n; i = i + 2) {
@@ -35,18 +197,18 @@ async function asyncSiteFunctions() {
                 return value;
             }
             // Declaring The Stars Divs
-        
+
             let starsGroup = document.querySelectorAll(".stars-group")
             starsGroup.forEach(group => {
                 group.style["boxShadow"] = randomStars(2000);
             })
-            
+
             $(".chars-first").addClass("active");
             $(".chars-second").addClass("active");
             $(".chars-third").addClass("active");
-        
+
             //// To fix The Phone Height Issue When Using VH unit For Elements Height
-        
+
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
             window.addEventListener('resize', () => {
@@ -68,7 +230,7 @@ async function asyncSiteFunctions() {
                     $("#home").css({"opacity": "1", "zIndex" : "5"});
                 }
             });
-                
+
             $(window).scroll(function(){
                 let contactBgHeight = $("#contact").height() * 2.5;
                 let windowHeight4Contact = $("body").height() - contactBgHeight;
@@ -80,9 +242,9 @@ async function asyncSiteFunctions() {
                     $("#contact").css("opacity", "0");
                 }
             });
-        
+
             //// Fade In Elements Observer
-        
+
             const faders = document.querySelectorAll(".fader");
             const fadersOptions = {
                 threshold: 0.3,
@@ -90,7 +252,7 @@ async function asyncSiteFunctions() {
             const passion1 = document.querySelector("[data-passion-item1]");
             const passion2 = document.querySelector("[data-passion-item2]");
             const passion3 = document.querySelector("[data-passion-item3]");
-        
+
             const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -103,17 +265,17 @@ async function asyncSiteFunctions() {
             faders.forEach(fader => {
                 appearOnScroll.observe(fader);
             });
-        
-        
+
+
             // /// Mission Animation Delay
-        
+
             // const mission = document.getElementById("mission-dets");
             // const missionDivs = Array.from(mission.children);
             // missionDivs.forEach((div, index) => {
             //     div.firstChild.style['transition-delay'] = index * 70 + "ms";
             // })
-        
-        
+
+
             const sectionTitle = document.querySelectorAll(".section-title")
             sectionTitle.forEach(title => {
                 const titleSpans = Array.from(title.children);
@@ -124,44 +286,55 @@ async function asyncSiteFunctions() {
                     })
                 })
             })
-        
+
             /// Passion Items Observer
-        
-            const passionItems = document.querySelectorAll(".passion-item");     
+
+            const passionItems = document.querySelectorAll(".passion-item");
             const passionObserverOptions = {
                 threshold: 1,
                 rootMargin: '0px',
-            } 
+            }
             const passionItemsObserver = new IntersectionObserver(function(entries, passionItemsObserver){
                 entries.forEach(entry => {
                     if( entry.isIntersecting ){
                         if(entry.target == passion1){
                             document.querySelector(".items-images-sticky").style.backgroundImage = "url(/static/images/tech.svg)"
-            
+
                         } else if (entry.target == passion2){
                             document.querySelector(".items-images-sticky").style.backgroundImage = "url(/static/images/design.svg)"
                             console.log("yes2");
-            
+
                         } else if (entry.target == passion3){
                             document.querySelector(".items-images-sticky").style.backgroundImage = "url(/static/images/cosmos.png)"
                         }
                     }
                 })
             }, passionObserverOptions);
-        
+
             passionItems.forEach(item => {
                 passionItemsObserver.observe(item);
             });
-        
+
             const talkSlider = document.getElementById("slider-container");
             const sliderChild = Array.from(talkSlider.children);
             const sliderChildWidth = sliderChild[0].getBoundingClientRect().width;
             let sliderChildOneWidth = sliderChild[1].getBoundingClientRect().width;
             let width =  sliderChildOneWidth ;
             document.documentElement.style.setProperty('--slideWidth', `${width}px`);
-        
+
             sliderChild.forEach(function(child){
                 child.style.position = 'absolute';
+            })
+            sliderChild.forEach(function(child, index){
+                child.style.position = 'absolute';
+                child.style.left = ( sliderChildWidth * index ) * 1.1 + 'px';
+            })
+
+            window.addEventListener("resize", function(){
+                sliderChild.forEach(function(child, index){
+                    child.style.position = 'absolute';
+                    child.style.left = ( sliderChildWidth * index ) * 1.1 + 'px';
+                })
             })
         })
     }

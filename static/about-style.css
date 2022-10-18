@@ -24,12 +24,16 @@ html {
     font-size: 20px;
 }
 
+ul {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     font-weight: 300;
 }
 
-p:not(#header p) {
+p:not(#header p, #home p, #contact p) {
     font-weight: 400;
     line-height: 1.6;
     font-family: 'Roboto', sans-serif;
@@ -39,6 +43,10 @@ h1,
 h2,
 p {
     max-width: 50ch;
+}
+
+i {
+    font-style: normal;
 }
 
 .flex {
@@ -161,12 +169,12 @@ p {
     overflow: hidden;
 }
 
-.chars-group h1 {
+.chars-group p {
     font-size: clamp(1.6rem, 9vw, 4.5rem);
     font-weight: 200;
 }
 
-.chars-group:nth-of-type(1) h1 span {
+.chars-group:nth-of-type(1) p span {
     font-size: clamp(1rem, 3vw, 3.5rem);
     font-family: orbitron;
     font-weight: 500;
@@ -616,7 +624,7 @@ p {
     margin: 4rem auto auto 4rem;
 }
 
-.student-title h3 {
+.student-title {
     font-size: clamp(1.2rem, 3.5vw, 2.5rem);
     font-weight: 300;
     margin-bottom: 1rem;
@@ -651,7 +659,7 @@ p {
     min-height: 500px;
     background-color: var(--prime-color);
     overflow: hidden;
-    padding: 0 0 10rem 0;
+    padding: 5rem 0 10rem 0;
     border-radius: 0 0 2rem 2rem;
 }
 
@@ -671,7 +679,7 @@ p {
     padding-bottom: 3rem;
 }
 
-.choose-intro p {
+.choose-intro i {
     font-family: 'Poppins', sans-serif !important;
     font-size: var(--p-bigger);
     opacity: 0.9;
@@ -696,13 +704,10 @@ p {
     color: white;
 }
 
-.reason-item span:not(p span) {
-    font-size: var(--h1-fs);
-    font-weight: 400;
-}
-
 .reason-title {
     position: relative;
+    font-size: var(--h1-fs);
+    font-weight: 400;
     -o-transform: translateY(50%);
     -ms-transform: translateY(50%);
     -moz-transform: translateY(50%);
@@ -876,6 +881,9 @@ p {
 .reach-methds span {
     color: white;
     font-size: var(--p-medium);
+}
+
+.reach-methds li {
     margin-top: 0.3rem;
 }
 
@@ -908,7 +916,7 @@ a.contact-btn:visited {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.8rem 3rem;
+    padding: 1rem 7vw;
     border: 1px solid var(--btn-border-clr);
     border-radius: 3rem;
     background: transparent;
@@ -918,6 +926,7 @@ a.contact-btn:visited {
     z-index: 1111;
     overflow: hidden;
 }
+
 
 
 /* PORTRAIT MODE STYLES */
@@ -996,7 +1005,7 @@ body.portrait-mode .passion-details p {
 }
 
 body.portrait-mode #passion .section-title,
-body.portrait-mode .student-title h3 {
+body.portrait-mode .student-title {
     font-size:clamp(1.5rem, 8vw, 2.5rem);
 }
 
