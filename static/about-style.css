@@ -353,7 +353,7 @@ i {
 
 .myimg {
     aspect-ratio: 0.75 / 1;
-    height: clamp(15rem, 34vw, 28rem);
+    height: clamp(15rem, 34vw, 40rem);
     margin: 0 0 0 auto;
     overflow: hidden;
     border: 1px solid transparent;
@@ -421,6 +421,7 @@ i {
 .bio p {
     line-height: 1.4;
     opacity: 0.7;
+    max-width: 60ch;
 }
 
 .bio p > div > span {
@@ -485,6 +486,7 @@ i {
     flex-direction: column;
     width: 100%;
     max-width: 1800px;
+    margin: auto;
 }
 
 .passion-intro {
@@ -542,8 +544,7 @@ i {
     flex-direction: column;
     align-items: flex-start;
     height: max-content;
-    width: 30%;
-    max-width: 30ch;
+    width: clamp(30ch, 30%, 40ch);
 }
 
 .passion-title {
@@ -677,6 +678,8 @@ i {
     justify-content: center;
     margin: auto;
     padding-bottom: 3rem;
+    max-width: 85%;
+    text-align: center;
 }
 
 .choose-intro i {
@@ -961,7 +964,7 @@ body.portrait-mode .bio {
 
 body.portrait-mode .myimg {
     margin: auto;
-    height: clamp(250px, 50vh, 400px);
+    height: clamp(200px, 50vh, 600px);
 }
 
 /* Passion Section */
@@ -997,7 +1000,7 @@ body.portrait-mode .passion-img {
 body.portrait-mode .passion-details {
     width: clamp(200px, 90%, 525px);
     max-width: max-content;
-    margin: auto;
+    margin: 2rem auto;
 }
 
 body.portrait-mode .passion-details p {
@@ -1010,7 +1013,7 @@ body.portrait-mode .student-title {
 }
 
 body.portrait-mode .student {
-    margin: 7rem auto;
+    margin: 7rem clamp(1rem, 7vw, 3rem) auto auto;
     width: max-content;
     max-width: 90%;
 }

@@ -153,6 +153,9 @@ def web_development():
 def sitemap():
         return render_template("sitemap.xml")
 
+FROM_DOMAIN = "www.marsman.pythonanywhere.com"
+TO_DOMAIN = "marsman.pythonanywhere.com"
+
 @app.before_request
 def redirect_to_domain():
     urlparts = urlparse(request.url)
