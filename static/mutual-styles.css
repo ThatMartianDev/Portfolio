@@ -65,6 +65,11 @@ a {
     font-weight: 300;
 }
 
+button {
+    background: transparent;
+    border: none;
+}
+
 .gradiant-font {
     background-image: -o-linear-gradient(to top left, #9F4109, #925700);
     background-image: -moz-linear-gradient(to top left, #9F4109, #925700);

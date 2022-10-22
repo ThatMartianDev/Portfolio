@@ -314,8 +314,8 @@ async function asyncSiteFunctions(){
                     if (entry.isIntersecting) {
                         home.isActive = true;
                         $("#sec01").css("transform", "scaleX(1.5)");
-                        home.homeSection.addEventListener('touchstart', debounce(handleHomeTouchStart, 500), false);
-                        home.homeSection.addEventListener('touchmove', debounce(handleHomeTransitions, 500), false);
+                        home.homeSection.addEventListener('touchstart', debounce(handleHomeTouchStart, 500), {passive: true});
+                        home.homeSection.addEventListener('touchmove', debounce(handleHomeTransitions, 500), {passive: true});
                         var xDown = null;
                         var yDown = null;
 
@@ -383,7 +383,7 @@ async function asyncSiteFunctions(){
                                     $("body").addClass("bg-changed");
                                 }, 2050);
                             }
-                        }));
+                        }), {passive: true});
                     } else {
                         home.isActive = false;
                         $("#sec01").css("transform", "scaleX(1)");
@@ -788,12 +788,12 @@ async function asyncSiteFunctions(){
                         prevSection();
                     }, 200);
                 }
-            }, 1000));
+            }, 1000), {passive: true});
 
             // The Touch Event Listener
 
-            slider.addEventListener('touchstart', debounce(handleTouchStart, 500), false);
-            slider.addEventListener('touchmove', debounce(handleTouchMove, 500), false);
+            slider.addEventListener('touchstart', debounce(handleTouchStart, 500),  {passive: true});
+            slider.addEventListener('touchmove', debounce(handleTouchMove, 500), {passive: true});
 
             var xDown = null;
             var yDown = null;
