@@ -868,7 +868,7 @@ async function asyncSiteFunctions(){
                 $(".planet").removeClass("back-to-home");
                 $(".intro-container").addClass("idle");
                 $(".intro-container").removeClass("active");
-                $("#scroll-down").addClass("idle");
+                $("#home #scroll-down").addClass("idle");
             };
 
             function homeActive() {
@@ -876,34 +876,38 @@ async function asyncSiteFunctions(){
                 $(".planet").removeClass("move-to-about");
                 $(".intro-container").addClass("active");
                 $(".intro-container").removeClass("idle");
-                $("#scroll-down").removeClass("idle");
+                $("#home #scroll-down").removeClass("idle");
             };
 
             function aboutIdle() {
                 $("#short-bio").addClass("idle");
                 $("#short-bio").removeClass("active");
-                $("#hala").addClass("idle");
+                $("#hala-home").addClass("idle");
                 $("#about-btn").addClass("idle");
+                $("#about #scroll-down").addClass("idle");
             };
 
             function aboutActive() {
                 $("#short-bio").addClass("active");
                 $("#short-bio").removeClass("idle");
-                $("#hala").removeClass("idle");
+                $("#hala-home").removeClass("idle");
                 $("#about-btn").removeClass("idle");
                 $(".planet").removeClass("active-again");
+                $("#about #scroll-down").removeClass("idle");
             };
 
             function solutionsActive() {
                 // $(".planet").addClass("idle");
                 $("#services").addClass("active");
                 $("#services").removeClass("idle");
+                $("#services #scroll-down").removeClass("idle");
             };
 
             function solutionsIdle() {
                 // $(".planet").removeClass("idle");
                 $("#services").addClass("idle");
                 $("#services").removeClass("active");
+                $("#services #scroll-down").addClass("idle");
             };
 
             function contactActive() {

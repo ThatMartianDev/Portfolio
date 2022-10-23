@@ -71,7 +71,7 @@ def contact():
             server.login(MY_EMAIL_ADDRESS, EMAIL_PASSWORD)
 
             if copy_of_mail == "yes":
-                msg['To'] = client_email
+                msg['To'] = [client_email, MY_EMAIL_ADDRESS]
                 msg.set_content(mail_content)
                 msg.add_alternative(f"""
                     <body style="width: 100vw; min-height: 200px; overflow-x: hidden;">
@@ -81,10 +81,10 @@ def contact():
                                     <th style="font-size: 10vw; font-weight:300;">Ya <span style="color: #925700;">Hala</span></th>
                                 </tr>
                                 <tr style="display: block; width: 90%; max-width: 1200px ; height:max-content; margin: 12vh auto auto 0;  font-size: 3vw;">
-                                    <td>Dear {client_name},</td>
+                                    <td>Dear {client_name},</td>        
                                 </tr>
                                 <tr style="display: block; width: 90%; max-width: 1200px ; height:max-content; margin: 1vw auto auto 0; font-size: 3vw;">
-                                    <td>Thank you for approaching me regarding the {service} solution, I'll get back to you as soon as i can!</td>
+                                    <td>Thank you for approaching me regarding the {service} solution, I'll get back to you as soon as i can!</td>        
                                 </tr>
                                 <tr style="display: block; width: 90%; max-width: 1200px ; height:max-content; margin: 2vw auto 4vw 0;  font-size: 3vw;">
                                     <td>Here are your submitted info:</td>
@@ -132,9 +132,9 @@ def contact():
                 msg['To'] = MY_EMAIL_ADDRESS
                 msg.set_content(mail_2me)
                 server.send_message(msg)
-
+                
         send_mail()
-        return redirect(request.url)
+        return redirect("/contact", code=302)
 
 
     return render_template("contact.html", title=title)
