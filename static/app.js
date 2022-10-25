@@ -46,14 +46,7 @@ async function asyncSiteFunctions(){
     const result = await loadingFinsihed();
     if (result == 'loading done'){
         $(document).ready(function() {
-            document.onkeydown = function(e) {
-                if (e.key === 'Tab') {
-                    e.preventDefault();
-                }
-            };
-
             /// fix 100vh Window Height Problem For The Sections
-
             const setHeight = ()=>{
                 document.querySelector("body").style.height = window.innerHeight + 'px';
                 const sections = document.querySelectorAll("#home,#about,#services,#contact");
@@ -61,9 +54,7 @@ async function asyncSiteFunctions(){
                     section.style.height = window.innerHeight + "px";
                 })
             }
-
             setHeight();
-
             window.addEventListener('resize', () => {
                 setHeight();
             });
@@ -72,9 +63,7 @@ async function asyncSiteFunctions(){
             document.documentElement.style.setProperty("--window-width", winWidth + 'px')
 
             /// Stary Background
-
             // Function To Randomly Generate The Stars Position For Maximum 4000px
-
             function randomStars(n) {
                 let value = `${Math.floor((Math.random() * 3000) + 2)}px ${Math.floor((Math.random() * 3000) + 2)}px #FFF`;
                 for (let i = 0; i < n; i = i + 2) {
@@ -82,16 +71,13 @@ async function asyncSiteFunctions(){
                 }
                 return value;
             }
-
             // Declaring The Stars Divs and assign the function as a boxShadow value
-
             $("#stars").css("boxShadow", randomStars(3000))
             $("#stars2").css("boxShadow", randomStars(2000))
             $("#stars3").css("boxShadow", randomStars(600))
 
 
             //// Fade In Elements Observer
-
             const faders = document.querySelectorAll(".fader");
             const fadersOptions = {
                 threshold: 0.6,
@@ -143,50 +129,36 @@ async function asyncSiteFunctions(){
                 $(this).children("svg").toggleClass("active");
             })
 
-            $(window).scroll(function(){
-                let scrollPos = $(window).scrollTop();
-                if (scrollPos > 300){
-                    $("#header").addClass("scrolled")
-                } else {
-                    $("#header").removeClass("scrolled")
-                }
-            })
-
             /// Fix 100vh Window Height Problem For The Faded In Menu
-
             const setMenuHeight = ()=>{
                 document.querySelector(".menu-container").style.height = window.innerHeight + 'px';
             }
-
             setMenuHeight()
-
             window.addEventListener('resize', () => {
                 setMenuHeight()
             });
 
             const paragraphs = document.querySelectorAll(".slide-out-text")
             paragraphs.forEach(paragraph => {
+            // Split the paragraph into words and return them as a Span tag inside a div tag
+            paragraph.innerHTML = paragraph.innerHTML.split(' ').map(function(word){
+                return '<div><span>'+word+'</span></div>';
+            }).join(' ');
 
-                // Split the paragraph into words and return them as a Span tag inside a div tag
-                paragraph.innerHTML = paragraph.innerHTML.split(' ').map(function(word){
-                    return '<div><span>'+word+'</span></div>';
-                }).join(' ');
-
-                // Add the transition delay to each span
-                const paragraphDivs = Array.from(paragraph.children)
-                paragraphDivs.forEach((div, index) => {
-                    let userAgent = navigator.userAgent;
-
-                    if (userAgent.match(/firefox|fxios/i)){
-                        div.firstChild.style['-moz-transition-delay'] = index * 10 + "ms";
-                    }  else if (userAgent.match(/safari/i)) {
-                        div.firstChild.style['-webkit-transition-delay'] = index * 10 + "ms";
-                    } else if (userAgent.match(/opr\//i)) {
-                        div.firstChild.style['-o-transition-delay'] = index * 10 + "ms";
-                    } else {
-                        div.firstChild.style['transition-delay'] = index * 10 + "ms";
-                    }
-                    })
+            // Add the transition delay to each span
+            const paragraphDivs = Array.from(paragraph.children)
+            paragraphDivs.forEach((div, index) => {
+                let userAgent = navigator.userAgent;
+                if (userAgent.match(/firefox|fxios/i)){
+                    div.firstChild.style['-moz-transition-delay'] = index * 10 + "ms";
+                }  else if (userAgent.match(/safari/i)) {
+                    div.firstChild.style['-webkit-transition-delay'] = index * 10 + "ms";
+                } else if (userAgent.match(/opr\//i)) {
+                    div.firstChild.style['-o-transition-delay'] = index * 10 + "ms";
+                } else {
+                    div.firstChild.style['transition-delay'] = index * 10 + "ms";
+                }
+                })
             })
 
             /// Menu Links Hover Effect Transition Delay
@@ -290,11 +262,13 @@ async function asyncSiteFunctions(){
                 solutionsSection: document.getElementById("services"),
                 isActive: false,
             }
+            let contact = {
+                contact_section: $("#contact"),
+                isActive: false,
+            }
 
             //// Navigation Opservers
-
             /// Observers Options
-
             const O1O2Options = {
                 threshold: 0.5,
             };
@@ -306,16 +280,14 @@ async function asyncSiteFunctions(){
                 threshold: 0.5,
             }
 
-
             /// 01 Home Observer
-
             const homeOpserver = new IntersectionObserver(function(entries, homeOpserver) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         home.isActive = true;
                         $("#sec01").css("transform", "scaleX(1.5)");
-                        home.homeSection.addEventListener('touchstart', debounce(handleHomeTouchStart, 500), {passive: true});
-                        home.homeSection.addEventListener('touchmove', debounce(handleHomeTransitions, 500), {passive: true});
+                        home.homeSection.addEventListener('touchstart', debounce(handleHomeTouchStart, 1000), {passive: true});
+                        home.homeSection.addEventListener('touchmove', debounce(handleHomeTransitions, 1000), {passive: true});
                         var xDown = null;
                         var yDown = null;
 
@@ -341,7 +313,7 @@ async function asyncSiteFunctions(){
                             var xDiff = xDown - xUp;
                             var yDiff = yDown - yUp;
 
-                            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+                            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                                 if ( xDiff > 0 ) {
                                      /* left swipe */
                                     } else {
@@ -401,8 +373,8 @@ async function asyncSiteFunctions(){
                         $("#sec02").css("transform", "scaleX(1.5)");
                         aboutActive();
 
-                        about.aboutSection.addEventListener('touchstart', debounce(handleAboutTouchStart, 500), false);
-                        about.aboutSection.addEventListener('touchmove', debounce(handleAboutTransitions, 500), false);
+                        about.aboutSection.addEventListener('touchstart', debounce(handleAboutTouchStart, 1000), {passive: true});
+                        about.aboutSection.addEventListener('touchmove', debounce(handleAboutTransitions, 1000), {passive: true});
 
                         var xDown = null;
                         var yDown = null;
@@ -512,7 +484,6 @@ async function asyncSiteFunctions(){
             });
 
             // 02/02 Bio animation delay loop
-
             function bioAnimDelay(){
                 const bio = document.getElementById("short-bio");
                 let bioDelay = 20;
@@ -542,19 +513,17 @@ async function asyncSiteFunctions(){
                     }
                 }
             }
-
             bioAnimDelay()
 
             /// 03 Services section Observer
-
             const servicesOpserver = new IntersectionObserver(function(entries, servicesOpserver) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         solutions.isActive = true;
                         $("#sec03").css("transform", "scaleX(1.5)");
 
-                        solutions.solutionsSection.addEventListener('touchstart', debounce(handleServicesTouchStart, 500), false);
-                        solutions.solutionsSection.addEventListener('touchmove', debounce(handleServicesTransitions, 500), false);
+                        solutions.solutionsSection.addEventListener('touchstart', debounce(handleServicesTouchStart, 1000), {passive: true});
+                        solutions.solutionsSection.addEventListener('touchmove', debounce(handleServicesTransitions, 1000), {passive: true});
 
                         var xDown = null;
                         var yDown = null;
@@ -637,10 +606,11 @@ async function asyncSiteFunctions(){
             const contactNavOpserver = new IntersectionObserver(function(entries, contactNavOpserver) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        contact.isActive = true;
                         $("#sec04").css("transform", "scaleX(1.5)");
 
-                        contactSection.addEventListener('touchstart', debounce(handleContactTouchStart, 500), false);
-                        contactSection.addEventListener('touchmove', debounce(handleContactTransitions, 500), false);
+                        contactSection.addEventListener('touchstart', debounce(handleContactTouchStart, 1000), {passive: true});
+                        contactSection.addEventListener('touchmove', debounce(handleContactTransitions, 1000), {passive: true});
 
                         var xDown = null;
                         var yDown = null;
@@ -698,7 +668,6 @@ async function asyncSiteFunctions(){
                         }))
                     } else {
                         $("#sec04").css("transform", "scaleX(1)");
-
                     }
                 })
             }, O4option);
@@ -707,12 +676,10 @@ async function asyncSiteFunctions(){
             const talkSlider = document.getElementById("slider-container");
             const sliderChild = Array.from(talkSlider.children);
             const sliderChildWidth = sliderChild[0].getBoundingClientRect().width;
-
             sliderChild.forEach(function(child, index){
                 child.style.position = 'absolute';
                 child.style.left = ( sliderChildWidth * index ) * 1.1 + 'px';
             })
-
             window.addEventListener("resize", function(){
                 sliderChild.forEach(function(child, index){
                     child.style.position = 'absolute';
@@ -720,22 +687,18 @@ async function asyncSiteFunctions(){
                 })
             })
 
-
             //// Main Sections Slider
-
             const slider = document.getElementById("slider");
             const slides = Array.from(slider.children);
             const sectionHeight = slides[0].getBoundingClientRect().height;
 
             /// align sections on top of each other
-
             slides.forEach(function(slide, index) {
                 slide.style.position = 'absolute';
                 slide.style.top = sectionHeight * index + 'px';
             })
 
             // adjust the sections whenever the Window resizes
-
             window.addEventListener('resize', function(){
                 sliderChild.forEach(function(child, index){
                     child.style.position = 'absolute';
@@ -748,9 +711,7 @@ async function asyncSiteFunctions(){
             })
 
             /// Slider Navigation Functions
-
             // Main Function
-
             function moveToSection(slider, currentSection, targetSection) {
                 slider.style.transform = `translateY(-${targetSection.style.top})`;
                 currentSection.classList.remove('current-section');
@@ -758,7 +719,6 @@ async function asyncSiteFunctions(){
             }
 
             // Next Section Function
-
             function nextSection() {
                 const currentSection = slider.querySelector(".current-section");
                 const nextSection = currentSection.nextElementSibling;
@@ -766,7 +726,6 @@ async function asyncSiteFunctions(){
             }
 
             // Previous Section Function
-
             function prevSection() {
                 const currentSection = slider.querySelector(".current-section");
                 const prevSection = currentSection.previousElementSibling;
@@ -774,9 +733,7 @@ async function asyncSiteFunctions(){
             }
 
             /// sections slider wheel event listener for mouse users
-
             // The Wheel Event Listener
-
             slider.addEventListener("wheel", debounce((e) => {
                 var scrollYpos = e.deltaY;;
                 if (scrollYpos > 0) {
@@ -791,9 +748,8 @@ async function asyncSiteFunctions(){
             }, 1000), {passive: true});
 
             // The Touch Event Listener
-
-            slider.addEventListener('touchstart', debounce(handleTouchStart, 500),  {passive: true});
-            slider.addEventListener('touchmove', debounce(handleTouchMove, 500), {passive: true});
+            slider.addEventListener('touchstart', debounce(handleTouchStart, 1000),  {passive: true});
+            slider.addEventListener('touchmove', debounce(handleTouchMove, 1000), {passive: true});
 
             var xDown = null;
             var yDown = null;
@@ -842,9 +798,78 @@ async function asyncSiteFunctions(){
                 yDown = null;
             };
 
-            /// Discover Button Actions
+            // Navigation functions for keyboard users
+            document.onkeydown = function(e) {
+                if (e.key === 'Tab') {
+                    e.preventDefault();
+                }
+            };
 
-            $("#scroll-down").on("click", function() {
+            window.onkeydown = debounce(function(e) {
+                if ($("#menu").hasClass("active")){
+                    return
+                } else {
+                    if (e.keyCode == "40" || e.key == "ArrowDown") {
+                        nextSection()
+                        if (home.isActive == true ){
+                            homeIdle();
+                            setTimeout(function() {
+                                $("#stars").addClass("slide");
+                                $("#stars2").addClass("slide");
+                                $("#stars3").addClass("slide");
+                            }, 230)
+                            setTimeout(function() {
+                                $("body").addClass("bg-changed");
+                            }, 2050);
+                        }
+                        if (about.isActive == true){
+                            aboutIdle()
+                            setTimeout(()=>{
+                                solutionsActive()
+                            }, 200)
+                        }
+                        if (solutions.isActive == true){
+                            setTimeout(()=>{
+                                solutionsIdle()
+                                contactActive()
+                            }, 200)
+                        }
+                    }
+                    if (e.keyCode == "38" || e.key == "ArrowUp"){
+                        prevSection()
+                        if (about.isActive == true){
+                            aboutIdle()
+                            setTimeout(function() {
+                                homeActive();
+                            }, 200);
+                            setTimeout(function() {
+                                $("body").removeClass("bg-changed");
+                            }, 950);
+                            setTimeout(function() {
+                                $("#stars").removeClass("slide");
+                                $("#stars2").removeClass("slide");
+                                $("#stars3").removeClass("slide");
+                            }, 500)
+                        }
+                        if (solutions.isActive == true){
+                            setTimeout(()=>{
+                                solutionsIdle()
+                                aboutActive()
+                            }, 200)
+                        }
+                        if (contact.isActive == true){
+                            setTimeout(()=>{
+                                contactIdle()
+                                solutionsActive()
+                            }, 200)
+                        }
+                    }
+                }
+            }, 1000);
+
+            /// home Scroll down Button Actions
+
+            $("#home #scroll-down").on("click", function() {
                 setTimeout(() => {
                     nextSection();
                 }, 200);
@@ -862,7 +887,6 @@ async function asyncSiteFunctions(){
             });
 
             //// Sections Transition Functions
-
             function homeIdle() {
                 $(".planet").addClass("move-to-about");
                 $(".planet").removeClass("back-to-home");
@@ -897,14 +921,12 @@ async function asyncSiteFunctions(){
             };
 
             function solutionsActive() {
-                // $(".planet").addClass("idle");
                 $("#services").addClass("active");
                 $("#services").removeClass("idle");
                 $("#services #scroll-down").removeClass("idle");
             };
 
             function solutionsIdle() {
-                // $(".planet").removeClass("idle");
                 $("#services").addClass("idle");
                 $("#services").removeClass("active");
                 $("#services #scroll-down").addClass("idle");

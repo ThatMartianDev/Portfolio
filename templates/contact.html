@@ -39,123 +39,123 @@
     <img src="/static/images/planet.svg">
 </div>
 <main class="main">
-    <div class="container flex" id="form-window">
-        <div id="form-close">
-            <span></span>
-            <span></span>
-        </div>
-        <div class="form-descr flex" data-form-descr>
-            <div class="tab-descr flex" data-descr-card>
-                <p>let's start with what <span class="gradiant-font">do you want</span> to do</p>
-                <span><span class="gradiant-font" >1</span> / 4</span>
+        <div class="container flex" id="form-window">
+            <div id="form-close">
+                <span></span>
+                <span></span>
             </div>
-            <div class="tab-descr flex" data-descr-card>
-                <p>Got it, now <span class="gradiant-font">Tell me</span> more about you</p>
-                <span><span class="gradiant-font">2</span> / 4</span>
-            </div>
-            <div class="tab-descr flex" data-descr-card>
-                <p>How can i <span class="gradiant-font">help you?</span></p>
-                <span><span class="gradiant-font">3</span> / 4</span>
-            </div>
-            <div class="tab-descr flex" data-descr-card>
-                <p>Almost done! how can i <span class="gradiant-font">reach out</span> to you?</p>
-                <span><span class="gradiant-font">4</span> / 4</span>
-            </div>
-        </div>
-        <form action="/contact" method="POST" id="regForm" class="form-container" data-multistep-form>
-            <div class="form-tab flex" id="first-tab" data-step>
-                <label class="label-container">Web Design
-                    <input type="radio" name="service" id="option1" value="Web Design" required>
-                    <span class="check-circle"></span>
-                </label>
-                <label class="label-container">Web Development
-                    <input type="radio" name="service" id="option2" value="Web Development" required>
-                    <span class="check-circle"></span>
-                </label>
-                <label class="label-container">Website Creation
-                    <input type="radio" name="service" id="option3" value="Website Creation" required>
-                    <span class="check-circle"></span>
-                </label>
-                <div class="prev-next flex">
-                    <button type="button" id="next" class="magnetic" data-next><span>Next</span></button>
+            <div class="form-descr flex" data-form-descr>
+                <div class="tab-descr flex" data-descr-card>
+                    <p>let's start with what <span class="gradiant-font">do you want</span> to do</p>
+                    <span><span class="gradiant-font" >1</span> / 4</span>
+                </div>
+                <div class="tab-descr flex" data-descr-card>
+                    <p>Got it, now <span class="gradiant-font">Tell me</span> more about you</p>
+                    <span><span class="gradiant-font">2</span> / 4</span>
+                </div>
+                <div class="tab-descr flex" data-descr-card>
+                    <p>How can i <span class="gradiant-font">help you?</span></p>
+                    <span><span class="gradiant-font">3</span> / 4</span>
+                </div>
+                <div class="tab-descr flex" data-descr-card>
+                    <p>Almost done! how can i <span class="gradiant-font">reach out</span> to you?</p>
+                    <span><span class="gradiant-font">4</span> / 4</span>
                 </div>
             </div>
-            <div class="form-tab flex" data-step>
-                <label for="name" data-must-fill>Full Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="bname" data-must-fill>Business Name</label>
-                <input type="text" id="bname" name="bname" required>
-                <label for="bindustry">Business Industry</label>
-                <input type="text" id="bindustry" name="bindustry">
-                <div class="prev-next flex">
-                    <button type="button" id="prev" class="magnetic" data-prev><span>Prev</span></button>
-                    <button type="button" id="next" class="magnetic" data-next><span>Next</span></button>
-                </div>
-            </div>
-            <div class="form-tab flex" data-step>
-                <label for="message" data-must-fill>Write your message here:</label>
-                <textarea name="message" id="message" cols="40" rows="5" required></textarea>
-                <div class="prev-next flex">
-                    <button type="button" id="prev" class="magnetic" data-prev><span>Prev</span></button>
-                    <button type="button" id="next" class="magnetic" data-next><span>Next</span></button>
-                </div>
-            </div>
-            <div class="form-tab flex" id="fourth-step" data-step>
-                <div class="contact-dets flex">
-                    <label for="mail" data-must-fill>Email</label>
-                    <input type="email" name="mail" id="mail" required>
-                    <label for="phone">Phone Number for live chat</label>
-                    <input type="tel" name="phone" id="phone">
-                    <span>Would you like a copy of this form?</span>
-                    <div id="copy-options">
-                        <label class="label-container">Yes
-                            <input type="radio" name="getcopy" id="optionyes" value="yes" required>
-                            <span class="check-circle"></span>
-                        </label>
-                        <label class="label-container">No
-                            <input type="radio" name="getcopy" id="optionno" value="no" required>
-                            <span class="check-circle"></span>
-                        </label>
+            <form action="/contact" method="POST" id="regForm" class="form-container" data-multistep-form>
+                <div class="form-tab flex" id="first-tab" data-step>
+                    <label class="label-container">Web Design
+                        <input type="radio" name="service" id="option1" value="Web Design" required>
+                        <span class="check-circle"></span>
+                    </label>
+                    <label class="label-container">Web Development
+                        <input type="radio" name="service" id="option2" value="Web Development" required>
+                        <span class="check-circle"></span>
+                    </label>
+                    <label class="label-container">Website Creation
+                        <input type="radio" name="service" id="option3" value="Website Creation" required>
+                        <span class="check-circle"></span>
+                    </label>
+                    <div class="prev-next flex">
+                        <button type="button" id="next" class="magnetic" data-next><span>Next</span></button>
                     </div>
                 </div>
-                <div class="prev-next flex">
-                    <button type="button" id="prev" class="magnetic" data-prev><span>Prev</span></button>
-                    <button type="button" id="submit-btn" class="magnetic"><span>Submit</span></button>
-                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="form-tab flex" data-step>
+                    <label for="name" data-must-fill>Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="bname" data-must-fill>Business Name</label>
+                    <input type="text" id="bname" name="bname" required>
+                    <label for="bindustry">Business Industry</label>
+                    <input type="text" id="bindustry" name="bindustry">
+                    <div class="prev-next flex">
+                        <button type="button" id="prev" class="magnetic" data-prev><span>Prev</span></button>
+                        <button type="button" id="next" class="magnetic" data-next><span>Next</span></button>
+                    </div>
                 </div>
+                <div class="form-tab flex" data-step>
+                    <label for="message" data-must-fill>Write your message here:</label>
+                    <textarea name="message" id="message" cols="40" rows="5" required></textarea>
+                    <div class="prev-next flex">
+                        <button type="button" id="prev" class="magnetic" data-prev><span>Prev</span></button>
+                        <button type="button" id="next" class="magnetic" data-next><span>Next</span></button>
+                    </div>
+                </div>
+                <div class="form-tab flex" id="fourth-step" data-step>
+                    <div class="contact-dets flex">
+                        <label for="mail" data-must-fill>Email</label>
+                        <input type="email" name="mail" id="mail" required>
+                        <label for="phone">Phone Number for live chat</label>
+                        <input type="tel" name="phone" id="phone">
+                        <span>Would you like a copy of this form?</span>
+                        <div id="copy-options">
+                            <label class="label-container">Yes
+                                <input type="radio" name="getcopy" id="optionyes" value="yes" required>
+                                <span class="check-circle"></span>
+                            </label>
+                            <label class="label-container">No
+                                <input type="radio" name="getcopy" id="optionno" value="no" required>
+                                <span class="check-circle"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="prev-next flex">
+                        <button type="button" id="prev" class="magnetic" data-prev><span>Prev</span></button>
+                        <button type="button" id="submit-btn" class="magnetic"><span>Submit</span></button>
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container flex" id="contact-intro">
+            <h1 class="intro fader"><span class="slide-out-text fader">Let's Work</span> <span class="slide-out-text fader">Together</span></h1>
+            <div class="contact-options flex fader">
+                <a href="mailto:thatmartiandev@gmail.com"><span>ThatMartianDev@gmail.com</span></a>
+                <a href="tel:+201026705679">Live chat, whatsApp & Viber</a>
+                <span class="gradiant-font">Or</span>
+                <button id="form-button"><span>Fill The Form</span></button>
             </div>
-        </form>
-    </div>
-    <div class="container flex" id="contact-intro">
-        <h1 class="intro fader"><span class="slide-out-text fader">Let's Work</span> <span class="slide-out-text fader">Together</span></h1>
-        <div class="contact-options flex fader">
-            <a href="mailto:thatmartiandev@gmail.com"><span>ThatMartianDev@gmail.com</span></a>
-            <a href="+201026705679">Live chat, whatsApp & Viber</a>
-            <span class="gradiant-font">Or</span>
-            <button id="form-button"><span>Fill The Form</span></button>
         </div>
-    </div>
-    <footer class="footer flex">
-        <p><span>MARSMAN</span> 2022 - Icons in site from <a href="https://icons8.com">Icons8</a></p>
-        <div class="footer-socials">
-            <a href="https://twitter.com/ThatMartianDev" target="_blank" class="footer-social" aria-label="Twitter account">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30" width="30px" height="30px">
-                    <g id="surface69330637">
-                    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(92.54902%,94.117647%,94.509804%);fill-opacity:1;" d="M 28 6.9375 C 27.042969 7.363281 26.015625 7.648438 24.9375 7.777344 C 26.039062 7.117188 26.882812 6.070312 27.28125 4.824219 C 26.25 5.4375 25.109375 5.882812 23.894531 6.121094 C 22.921875 5.085938 21.535156 4.4375 20 4.4375 C 17.054688 4.4375 14.664062 6.824219 14.664062 9.769531 C 14.664062 10.1875 14.714844 10.597656 14.804688 10.984375 C 10.371094 10.761719 6.441406 8.640625 3.808594 5.410156 C 3.351562 6.199219 3.089844 7.113281 3.089844 8.09375 C 3.089844 9.945312 4.027344 11.578125 5.460938 12.53125 C 4.585938 12.503906 3.761719 12.265625 3.042969 11.867188 C 3.042969 11.890625 3.042969 11.910156 3.042969 11.933594 C 3.042969 14.519531 4.882812 16.675781 7.324219 17.164062 C 6.875 17.285156 6.402344 17.351562 5.917969 17.351562 C 5.574219 17.351562 5.238281 17.316406 4.914062 17.253906 C 5.59375 19.375 7.5625 20.917969 9.898438 20.960938 C 8.070312 22.390625 5.773438 23.242188 3.273438 23.242188 C 2.84375 23.242188 2.417969 23.21875 2 23.167969 C 4.359375 24.683594 7.164062 25.566406 10.175781 25.566406 C 19.988281 25.566406 25.351562 17.4375 25.351562 10.386719 C 25.351562 10.15625 25.347656 9.925781 25.335938 9.699219 C 26.378906 8.945312 27.285156 8.007812 28 6.9375 Z M 28 6.9375 "/>
-                    </g>
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/ThatMartianDev" target="_blank" class="footer-social" aria-label="Linkedin account">in</a>
-            <a href="https://github.com/ThatMartianDev" target="_blank" class="footer-social" aria-label="GitHub account">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30" width="30px" height="30px">
-                    <g id="surface69433073">
-                    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 15 3 C 8.371094 3 3 8.371094 3 15 C 3 20.621094 6.871094 25.328125 12.09375 26.628906 C 12.035156 26.46875 12 26.28125 12 26.046875 L 12 23.996094 C 11.511719 23.996094 10.695312 23.996094 10.492188 23.996094 C 9.671875 23.996094 8.941406 23.644531 8.585938 22.988281 C 8.195312 22.257812 8.125 21.144531 7.152344 20.460938 C 6.863281 20.234375 7.082031 19.976562 7.414062 20.011719 C 8.03125 20.183594 8.539062 20.605469 9.019531 21.230469 C 9.5 21.859375 9.722656 22 10.617188 22 C 11.050781 22 11.699219 21.976562 12.308594 21.878906 C 12.636719 21.046875 13.203125 20.28125 13.894531 19.917969 C 9.898438 19.507812 7.992188 17.519531 7.992188 14.820312 C 7.992188 13.65625 8.488281 12.535156 9.328125 11.585938 C 9.054688 10.648438 8.707031 8.730469 9.433594 8 C 11.234375 8 12.320312 9.164062 12.582031 9.480469 C 13.476562 9.175781 14.460938 9 15.496094 9 C 16.53125 9 17.519531 9.175781 18.417969 9.484375 C 18.675781 9.171875 19.761719 8 21.566406 8 C 22.296875 8.730469 21.945312 10.65625 21.667969 11.59375 C 22.503906 12.539062 22.996094 13.660156 22.996094 14.820312 C 22.996094 17.515625 21.089844 19.503906 17.101562 19.917969 C 18.199219 20.488281 19 22.101562 19 23.3125 L 19 26.046875 C 19 26.152344 18.976562 26.226562 18.964844 26.316406 C 23.640625 24.675781 27 20.234375 27 15 C 27 8.371094 21.628906 3 15 3 Z M 15 3 "/>
-                    </g>
-                </svg>                            
-            </a>
-        </div>
-    </footer>
-</main>
+        <footer class="footer flex">
+            <p><span>MARSMAN</span> 2022 - Icons in site from <a href="https://icons8.com">Icons8</a></p>
+            <div class="footer-socials">
+                <a href="https://twitter.com/ThatMartianDev" target="_blank" class="footer-social" aria-label="Twitter account">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30" width="30px" height="30px">
+                        <g id="surface69330637">
+                        <path style=" stroke:none;fill-rule:nonzero;fill:rgb(92.54902%,94.117647%,94.509804%);fill-opacity:1;" d="M 28 6.9375 C 27.042969 7.363281 26.015625 7.648438 24.9375 7.777344 C 26.039062 7.117188 26.882812 6.070312 27.28125 4.824219 C 26.25 5.4375 25.109375 5.882812 23.894531 6.121094 C 22.921875 5.085938 21.535156 4.4375 20 4.4375 C 17.054688 4.4375 14.664062 6.824219 14.664062 9.769531 C 14.664062 10.1875 14.714844 10.597656 14.804688 10.984375 C 10.371094 10.761719 6.441406 8.640625 3.808594 5.410156 C 3.351562 6.199219 3.089844 7.113281 3.089844 8.09375 C 3.089844 9.945312 4.027344 11.578125 5.460938 12.53125 C 4.585938 12.503906 3.761719 12.265625 3.042969 11.867188 C 3.042969 11.890625 3.042969 11.910156 3.042969 11.933594 C 3.042969 14.519531 4.882812 16.675781 7.324219 17.164062 C 6.875 17.285156 6.402344 17.351562 5.917969 17.351562 C 5.574219 17.351562 5.238281 17.316406 4.914062 17.253906 C 5.59375 19.375 7.5625 20.917969 9.898438 20.960938 C 8.070312 22.390625 5.773438 23.242188 3.273438 23.242188 C 2.84375 23.242188 2.417969 23.21875 2 23.167969 C 4.359375 24.683594 7.164062 25.566406 10.175781 25.566406 C 19.988281 25.566406 25.351562 17.4375 25.351562 10.386719 C 25.351562 10.15625 25.347656 9.925781 25.335938 9.699219 C 26.378906 8.945312 27.285156 8.007812 28 6.9375 Z M 28 6.9375 "/>
+                        </g>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ThatMartianDev" target="_blank" class="footer-social" aria-label="Linkedin account">in</a>
+                <a href="https://github.com/ThatMartianDev" target="_blank" class="footer-social" aria-label="GitHub account">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30" width="30px" height="30px">
+                        <g id="surface69433073">
+                        <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 15 3 C 8.371094 3 3 8.371094 3 15 C 3 20.621094 6.871094 25.328125 12.09375 26.628906 C 12.035156 26.46875 12 26.28125 12 26.046875 L 12 23.996094 C 11.511719 23.996094 10.695312 23.996094 10.492188 23.996094 C 9.671875 23.996094 8.941406 23.644531 8.585938 22.988281 C 8.195312 22.257812 8.125 21.144531 7.152344 20.460938 C 6.863281 20.234375 7.082031 19.976562 7.414062 20.011719 C 8.03125 20.183594 8.539062 20.605469 9.019531 21.230469 C 9.5 21.859375 9.722656 22 10.617188 22 C 11.050781 22 11.699219 21.976562 12.308594 21.878906 C 12.636719 21.046875 13.203125 20.28125 13.894531 19.917969 C 9.898438 19.507812 7.992188 17.519531 7.992188 14.820312 C 7.992188 13.65625 8.488281 12.535156 9.328125 11.585938 C 9.054688 10.648438 8.707031 8.730469 9.433594 8 C 11.234375 8 12.320312 9.164062 12.582031 9.480469 C 13.476562 9.175781 14.460938 9 15.496094 9 C 16.53125 9 17.519531 9.175781 18.417969 9.484375 C 18.675781 9.171875 19.761719 8 21.566406 8 C 22.296875 8.730469 21.945312 10.65625 21.667969 11.59375 C 22.503906 12.539062 22.996094 13.660156 22.996094 14.820312 C 22.996094 17.515625 21.089844 19.503906 17.101562 19.917969 C 18.199219 20.488281 19 22.101562 19 23.3125 L 19 26.046875 C 19 26.152344 18.976562 26.226562 18.964844 26.316406 C 23.640625 24.675781 27 20.234375 27 15 C 27 8.371094 21.628906 3 15 3 Z M 15 3 "/>
+                        </g>
+                    </svg>                            
+                </a>
+            </div>
+        </footer>
+    </main>
 {% endblock %}
 {% block docJs %}
 <script src="{{ url_for ('static', filename='contact.js') }}"></script>
