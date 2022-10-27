@@ -887,13 +887,21 @@ body.portrait-mode .reach-methds span {
 }
 
 
+body.portrait-mode .reach-methds li:nth-of-type(2){
+    margin: clamp(0.5rem, 2vh, 0.9rem) 0;
+}
+
 body.portrait-mode #contact a.contact-btn:link,
 body.portrait-mode #contact a.contact-btn:focus,
 body.portrait-mode #contact a.contact-btn:active,
 body.portrait-mode #contact a.contact-btn:visited {
-    padding: 2vh 15vw;
+    padding: 2vh clamp(1rem, 10ch, 25vw);
+    min-width: max-content;
     font-size: var(--p-bigger);
-    margin: 0 auto;
+}
+
+body.portrait-mode .footer-social {
+    margin: 0 0.5rem;
 }
 
 body.portrait-mode .planet {

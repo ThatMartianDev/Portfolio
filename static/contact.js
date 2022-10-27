@@ -124,18 +124,7 @@ $(document).ready(function(){
             const allValid = inputs.every(input => input.reportValidity());
             if (allValid){
                 form.submit()
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault();    // prevent page from refreshing
-                    const formData = new FormData(form);  // grab the data inside the form fields
-                    fetch('/contact', {   // assuming the backend is hosted on the same server
-                        method: 'POST',
-                        body: formData,
-                    }).then(function(response) {
-                        window.alert("done")
-                        // If you want the table to be built only after the backend handles the request and replies, call buildTable() here.
-                    });
-                });
-
+                submitBtn.innerText = "Processing..."
             }
         }, 2000);
 

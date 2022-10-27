@@ -801,7 +801,13 @@ async function asyncSiteFunctions(){
             // Navigation functions for keyboard users
             document.onkeydown = function(e) {
                 if (e.key === 'Tab') {
-                    e.preventDefault();
+                    if (about.isActive == true){
+                        $("#about-btn").focus()
+                        e.preventDefault();
+                    }
+                    else {
+                        e.preventDefault();
+                    }
                 }
             };
 

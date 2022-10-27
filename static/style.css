@@ -81,6 +81,47 @@ ul {
     height: 100%;
 }
 
+.nav-guide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 0, 0.8);
+    z-index: 111111;
+}
+
+.nav-guide p {
+    font-size: var(--h1-fs);
+    font-weight: 300;
+    text-align: center;
+}
+
+.nav-guide button {
+    font-size: var(--p-bigger);
+    color: white;
+    padding: 1rem 3rem;
+    border: 1px solid white;
+    border-radius: 2rem;
+}
+
+.nav-guide ul {
+    display: flex;
+    width: max-content;
+    height: max-content;
+    margin: 2rem auto;
+}
+
+.nav-guide ul li {
+    width: clamp(2.5rem, 4vw, 8rem);
+    aspect-ratio: 1 / 1;
+    margin: 0 1rem;
+}
+
 .sections-nav {
     -ms-flex-direction: column;
     flex-direction: column;
@@ -484,7 +525,7 @@ body #header {
     color: white;
     font-size: var(--p-medium);
     font-weight: 400;
-    padding: clamp(1rem, 2vh, 2rem) clamp(2.5rem, 15vw, 3rem);
+    padding: clamp(0.7rem, 2vh, 2rem) clamp(2.5rem, 15vw, 3rem);
     border: 1px solid var(--btn-border-clr);
     border-radius: 3rem;
     background: transparent;
@@ -1116,7 +1157,8 @@ body.portrait-mode .intro-container.active {
     transform: translate(-50%, -80%);
 }
 
-body.portrait-mode .intro-container h1 {
+body.portrait-mode .intro-container h1,
+body.portrait-mode .intro-container h2 {
     font-size: clamp(2.2rem, 10vw, 7rem);
 }
 
@@ -1284,14 +1326,22 @@ body.portrait-mode .reach-methds span {
     font-size: var(--p-bigger);
 }
 
+body.portrait-mode .reach-methds li:nth-of-type(2){
+    margin: clamp(0.5rem, 2vh, 0.9rem) 0;
+}
+
 body.portrait-mode #contact a.contact-btn:link,
 body.portrait-mode #contact a.contact-btn:focus,
 body.portrait-mode #contact a.contact-btn:active,
 body.portrait-mode #contact a.contact-btn:visited {
-    padding: 2vh 15vw;
-    min-width: 80%;
+    padding: 2vh clamp(1rem, 10ch, 25vw);
+    min-width: max-content;
     font-size: var(--p-bigger);
     margin: 2rem auto 0 auto;
+}
+
+body.portrait-mode .footer-social {
+    margin: 0 0.5rem;
 }
 
 /* Portrait Mode Styles (Tablets) */
@@ -1309,7 +1359,6 @@ body.portrait-mode #contact a.contact-btn:visited {
     }
 
     body.portrait-mode .talk-slider {
-        height: clamp(3rem, 13vw, 7rem);
         font-size: clamp(2rem, 9vw, 5rem);
     }
 
