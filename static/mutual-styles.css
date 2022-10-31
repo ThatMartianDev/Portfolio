@@ -800,33 +800,36 @@ body.portrait-mode .logo svg {
     width: 1px;
     height: 1px;
     background: transparent;
-    opacity: 0.7;
+    opacity: 0.6;
     -o-animation: animStar 350s linear infinite;
     -moz-animation: animStar 350s linear infinite;
     -webkit-animation: animStar 350s linear infinite;
     animation: animStar 350s linear infinite;
+    border-radius: 50%;
 }
 
 #stars2 {
     width: 2px;
     height: 2px;
     background: transparent;
-    opacity: 0.6;
+    opacity: 0.4;
     -o-animation: animStar 250s linear infinite;
     -moz-animation: animStar 250s linear infinite;
     -webkit-animation: animStar 250s linear infinite;
     animation: animStar 250s linear infinite;
+    border-radius: 50%;
 }
 
 #stars3 {
     width: 3px;
     height: 3px;
     background: transparent;
-    opacity: 0.5;
-    -o-animation: animStar 150s linear infinite;
-    -moz-animation: animStar 150s linear infinite;
-    -webkit-animation: animStar 150s linear infinite;
-    animation: animStar 150s linear infinite;
+    opacity: 0.2;
+    -o-animation: animStar 200s linear infinite;
+    -moz-animation: animStar 200s linear infinite;
+    -webkit-animation: animStar 200s linear infinite;
+    animation: animStar 200s linear infinite;
+    border-radius: 50%;
 }
 
 

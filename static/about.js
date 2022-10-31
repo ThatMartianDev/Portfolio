@@ -232,26 +232,21 @@ async function asyncSiteFunctions() {
             });
 
             $(window).scroll(function(){
-                let contactBgHeight = $("#contact").height() * 2.5;
+                let contactBgHeight = $("#contact").height() * 2.8;
                 let windowHeight4Contact = $("body").height() - contactBgHeight;
                 if ($(window).scrollTop() > windowHeight4Contact) {
-                    $("#contact-bg").css("opacity", "1");
-                    $("#contact").css("opacity", "1");
+                    $("#contact-bg").css({"opacity": "1", "zIndex" : "5"});
+                    $("#contact").css({"opacity": "1", "zIndex" : "6"});
                 } else {
-                    $("#contact-bg").css("opacity", "0");
-                    $("#contact").css("opacity", "0");
+                    $("#contact-bg, #contact").css({"opacity": "0", "zIndex" : "-1"});
                 }
             });
-
             //// Fade In Elements Observer
 
             const faders = document.querySelectorAll(".fader");
             const fadersOptions = {
                 threshold: 0.3,
             };
-            const passion1 = document.querySelector("[data-passion-item1]");
-            const passion2 = document.querySelector("[data-passion-item2]");
-            const passion3 = document.querySelector("[data-passion-item3]");
 
             const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
                 entries.forEach(entry => {
@@ -266,16 +261,6 @@ async function asyncSiteFunctions() {
                 appearOnScroll.observe(fader);
             });
 
-
-            // /// Mission Animation Delay
-
-            // const mission = document.getElementById("mission-dets");
-            // const missionDivs = Array.from(mission.children);
-            // missionDivs.forEach((div, index) => {
-            //     div.firstChild.style['transition-delay'] = index * 70 + "ms";
-            // })
-
-
             const sectionTitle = document.querySelectorAll(".section-title")
             sectionTitle.forEach(title => {
                 const titleSpans = Array.from(title.children);
@@ -286,34 +271,6 @@ async function asyncSiteFunctions() {
                     })
                 })
             })
-
-            /// Passion Items Observer
-
-            const passionItems = document.querySelectorAll(".passion-item");
-            const passionObserverOptions = {
-                threshold: 1,
-                rootMargin: '0px',
-            }
-            const passionItemsObserver = new IntersectionObserver(function(entries, passionItemsObserver){
-                entries.forEach(entry => {
-                    if( entry.isIntersecting ){
-                        if(entry.target == passion1){
-                            document.querySelector(".items-images-sticky").style.backgroundImage = "url(/static/images/tech.svg)"
-
-                        } else if (entry.target == passion2){
-                            document.querySelector(".items-images-sticky").style.backgroundImage = "url(/static/images/design.svg)"
-                            console.log("yes2");
-
-                        } else if (entry.target == passion3){
-                            document.querySelector(".items-images-sticky").style.backgroundImage = "url(/static/images/cosmos.png)"
-                        }
-                    }
-                })
-            }, passionObserverOptions);
-
-            passionItems.forEach(item => {
-                passionItemsObserver.observe(item);
-            });
 
             const talkSlider = document.getElementById("slider-container");
             const sliderChild = Array.from(talkSlider.children);

@@ -7,8 +7,8 @@
     box-sizing: border-box;
 }
 
-section:not(#header, #menu, #home, #contact, #contact-bg){
-    z-index: 20;
+#about-me, #passion, #why-choose-me, #reach-out{
+    z-index: 10;
 }
 
 body {
@@ -121,7 +121,7 @@ i {
     display: block;
     position: sticky;
     top: 0;
-    z-index: -1;
+    z-index: 5;
     width: 100vw;
     height: 100vh;
     background: -o-linear-gradient(to bottom right, #080319, #09031b, #0a031e, #0b0420, #0c0423, #150524, #1c0624, #230623, #2e071d, #360a16, #3a100e, #3b1904);
@@ -352,8 +352,8 @@ i {
 }
 
 .myimg {
-    aspect-ratio: 0.75 / 1;
-    height: clamp(15rem, 34vw, 40rem);
+    aspect-ratio: 0.72 / 1;
+    height: clamp(15rem, 30vw, 40rem);
     margin: 0 0 0 auto;
     overflow: hidden;
     border: 1px solid transparent;
@@ -515,9 +515,9 @@ i {
 
 .passion-intro svg {
     position: absolute;
-    height: 50%;
+    height: clamp(2rem, 20vw, 6rem);
     aspect-ratio: 1 / 1;
-    bottom: -40%;
+    bottom: -4.5rem;
     right: -40%;
     -o-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
@@ -661,7 +661,6 @@ i {
     background-color: var(--prime-color);
     overflow: hidden;
     padding: 5rem 0 10rem 0;
-    border-radius: 0 0 2rem 2rem;
 }
 
 .reasons-container {
@@ -698,13 +697,17 @@ i {
 .reason-item {
     align-items: flex-start;
     justify-content: flex-start;
-    width: 33%;
+    width: 30%;
     height: max-content;
     position: relative;
     flex-direction: column;
     padding: 2rem 0;
-    margin: 0 0.6rem;
+    margin: 0 2rem;
     color: white;
+}
+
+#why-choose-me .reason-item p {
+    font-family: 'Poppins', sans-serif;
 }
 
 .reason-title {
@@ -771,7 +774,62 @@ i {
     transform: translate(-50% ,-60%);
 }
 
+/* Reach Out Section */
 
+#reach-out {
+    position: relative;
+    background: var(--prime-color);
+    width: 100vw;
+    min-height: 150px;
+    padding-bottom: 15rem;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.reach-container {
+    flex-direction: column;
+    color: white;
+    width: max-content;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.reach-container .section-title {
+    margin: 0 auto 0 auto;
+    max-width: 20ch;
+    text-align: center;
+}
+
+#reach-out .reach-container p {
+    max-width: 50ch;
+    text-align: center;
+    font-weight: 300;
+    font-size: var(--p-bigger);
+    margin: 3rem 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+#reach-out .reach-btn {
+    color: white;
+    font-size: var(--p-medium);
+    font-weight: 400;
+    border: 1px solid var(--btn-border-clr);
+    padding: 1rem 5vw;
+    border-radius: 3rem;
+    opacity: 0;
+    
+    -o-transition: opacity 1s var(--fast-slow-trans) 1s,
+                transform 0.23s linear;
+    -moz-transition: opacity 1s var(--fast-slow-trans) 1s,
+                transform 0.23s linear;
+    -webkit-transition: opacity 1s var(--fast-slow-trans) 1s,
+                transform 0.23s linear;
+    transition: opacity 1s var(--fast-slow-trans) 1s,
+                transform 0.23s linear;
+}
+
+#reach-out .reach-btn.fade-in {
+    opacity: 1;
+}
 
 /* LETS TALK SECTION CONTACT REDIRECT LINK */
 
@@ -1000,7 +1058,7 @@ body.portrait-mode .passion-img {
 body.portrait-mode .passion-details {
     width: clamp(200px, 90%, 525px);
     max-width: max-content;
-    margin: 2rem auto;
+    margin: 0 auto;
 }
 
 body.portrait-mode .passion-details p {
@@ -1009,7 +1067,7 @@ body.portrait-mode .passion-details p {
 
 body.portrait-mode #passion .section-title,
 body.portrait-mode .student-title {
-    font-size:clamp(1.5rem, 8vw, 2.5rem);
+    font-size:clamp(1.5rem, 7vw, 2.5rem);
 }
 
 body.portrait-mode .student {
@@ -1019,10 +1077,6 @@ body.portrait-mode .student {
 }
 
 /* Why Choose Me */
-
-body.portrait-mode #why-choose-me {
-    margin-bottom: -10vh;
-}
 
 body.portrait-mode .reason-items {
     width: 100%;
@@ -1047,6 +1101,23 @@ body.portrait-mode .mark {
     -webkit-transform: translate(50% ,-50%);
     transform: translate(50% ,-50%);
 }
+
+
+/* Reach Out */
+
+body.portrait-mode .reach-container {
+    width: 100%;
+}
+
+
+body.portrait-mode .reach-container p {
+    width: 95%;
+}
+
+body.portrait-mode #reach-out .reach-btn {
+    padding: 1rem 14vw;
+}
+
 
 /* Contact */
 
@@ -1091,9 +1162,10 @@ body.portrait-mode #contact a.contact-btn:link,
 body.portrait-mode #contact a.contact-btn:focus,
 body.portrait-mode #contact a.contact-btn:active,
 body.portrait-mode #contact a.contact-btn:visited {
-    padding: 2vh 15vw;
+    padding: 2vh clamp(1rem, 10ch, 25vw);
+    min-width: max-content;
     font-size: var(--p-bigger);
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
 }
 
 body.portrait-mode .planet {
